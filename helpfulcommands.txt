@@ -1,0 +1,13 @@
+// stop elastic search
+sudo systemctl stop td-agent.service
+
+// start elastic search
+sudo systemctl start td-agent.service
+
+// check if result.json (or other files) are being passed to elastic search
+cd /var/log/td-agent
+tail -100f td-agent.log
+
+// run model
+cd Real-Time-Server-Defense/container
+python3 main.py
